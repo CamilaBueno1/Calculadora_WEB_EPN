@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Calculadora de promedios para estudiantes de la Escuela Politécnica Nacional" />
+  <title>Calculadora de Notas | EPN</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <main class="card">
+    <header class="card__header">
+      <div class="logo" aria-hidden="true">EPN</div>
+      <div>
+        <h1>Calculadora de Promedios</h1>
+        <p class="subtitle">Escuela Politécnica Nacional</p>
+      </div>
+    </header>
+
+    <!-- Reglas de aprobación (primero) -->
+    <section class="reglas">
+      <h2>Reglas de aprobación</h2>
+      <ul>
+        <li class="regla regla--aprueba">
+          <span class="regla__rango">28 – 40</span>
+          <span class="regla__nombre">Aprueba</span>
+        </li>
+        <li class="regla regla--supletorio">
+          <span class="regla__rango">18 – 27.99</span>
+          <span class="regla__nombre">Supletorio</span>
+        </li>
+        <li class="regla regla--reprueba">
+          <span class="regla__rango">0 – 17.99</span>
+          <span class="regla__nombre">Reprueba</span>
+        </li>
+      </ul>
+    </section>
+
+    <form id="form-calculadora" novalidate>
+      <div class="campo">
+        <label for="nota1">Nota 1 <span class="escala">(0 – 20)</span></label>
+        <input
+          type="number"
+          id="nota1"
+          name="nota1"
+          min="0"
+          max="20"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Ej. 15.5"
+          autocomplete="off"
+        />
+        <small class="error" id="error-nota1" role="alert"></small>
+      </div>
+
+      <div class="campo">
+        <label for="nota2">Nota 2 <span class="escala">(0 – 20)</span></label>
+        <input
+          type="number"
+          id="nota2"
+          name="nota2"
+          min="0"
+          max="20"
+          step="0.01"
+          inputmode="decimal"
+          placeholder="Ej. 13"
+          autocomplete="off"
+        />
+        <small class="error" id="error-nota2" role="alert"></small>
+      </div>
+
+      <div class="botones">
+        <button type="submit" class="btn btn--primary">Calcular</button>
+        <button type="button" class="btn btn--ghost" id="btn-limpiar">Limpiar</button>
+      </div>
+    </form>
+
+    <section id="resultado" class="resultado oculto" aria-live="polite">
+      <p class="resultado__label">Promedio</p>
+      <div class="resultado__promedio">
+        <span class="resultado__valor" id="txt-promedio"></span>
+        <span class="resultado__escala">/ 40</span>
+      </div>
+
+      <p class="resultado__estado" id="txt-estado"></p>
+      <p class="resultado__detalle" id="txt-detalle"></p>
+
+      <div class="supletorio oculto" id="caja-supletorio">
+        <p class="supletorio__titulo">Nota mínima en el examen de supletorio</p>
+        <p class="supletorio__valor">
+          <span id="txt-examen"></span><span class="supletorio__escala"> / 40</span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!--
+    El navegador no entiende TypeScript, así que src/app.ts se compila en el
+    momento al abrir la página. El proyecto NO contiene archivos .js.
+    Requiere: servidor local (npx serve .) + internet para el compilador.
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/typescript@5/lib/typescript.js"></script>
+  <script>
+    fetch("src/app.ts")
+      .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
+      .then((codigo) => {
+        const salida = ts.transpileModule(codigo, {
+          compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.None },
+        });
+        (0, eval)(salida.outputText);
+      })
+      .catch(() =>
+        alert(
+          "No se pudo cargar src/app.ts.\n\n" +
+            "Abre la página con un servidor local:\n" +
+            "    npx serve .\n\n" +
+            "También necesitas conexión a internet para bajar el compilador de TypeScript."
+        )
+      );
+  </script>
+</body>
+</html>

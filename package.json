@@ -1,0 +1,13 @@
+{
+  "name": "calculadora-web-epn",
+  "version": "1.0.0",
+  "description": "Calculadora de promedios y supletorios para estudiantes de la Escuela Politécnica Nacional",
+  "private": true,
+  "scripts": {
+    "start": "npx serve .",
+    "check": "tsc"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}
