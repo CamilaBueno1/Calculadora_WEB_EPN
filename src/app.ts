@@ -3,7 +3,7 @@
  *
  *   promedio = nota1 + nota2          (notas 0-20, promedio sobre 40)
  *   28 - 40    -> aprueba
- *   18 - 27.99 -> supletorio:  (promedio + examen) / 2 >= 24  =>  examen >= 48 - promedio
+ *   18 - 27.99 -> supletorio: examen >= 24 y promedio + examen >= 48
  *   0  - 17.99 -> reprueba
  */
 
@@ -14,7 +14,8 @@ const MIN = 0;
 const MAX = 20;
 const APROBAR = 28;
 const SUPLETORIO = 18;
-const META_SUPLETORIO = 24;
+const MIN_TOTAL_SUPLETORIO = 48;
+const MIN_EXAMEN_SUPLETORIO = 24;
 const MSG_NUMERO = "Ingrese un número válido (use el punto: 15.5).";
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
@@ -59,9 +60,13 @@ const determinarEstado = (p: number): Estado =>
 function calcular(nota1: number, nota2: number) {
   const promedio = nota1 + nota2;
   const estado = determinarEstado(promedio);
-  // Nota mínima del examen (sobre 40), redondeada hacia arriba a 2 decimales.
+  // Se redondea hacia arriba a 2 decimales para cumplir ambos mínimos.
   const notaExamenMinima =
-    estado === "supletorio" ? Math.ceil((2 * META_SUPLETORIO - promedio) * 100) / 100 : null;
+    estado === "supletorio"
+      ? Math.ceil(
+          Math.max(MIN_EXAMEN_SUPLETORIO, MIN_TOTAL_SUPLETORIO - promedio) * 100
+        ) / 100
+      : null;
   return { promedio, estado, notaExamenMinima };
 }
 
@@ -75,7 +80,8 @@ const ETIQUETAS: Record<Estado, string> = {
 
 const DETALLES: Record<Estado, string> = {
   aprueba: "Felicitaciones, alcanzaste la nota mínima aprobatoria (28/40).",
-  supletorio: "Debes presentar el examen de supletorio para pasar el período.",
+  supletorio:
+    "Para aprobar el supletorio, necesitas obtener al menos 24/40 y sumar 48 puntos entre tus notas y el examen.",
   reprueba: "No alcanzaste la nota mínima (18/40). Reprobaste el período.",
 };
 

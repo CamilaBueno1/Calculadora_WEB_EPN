@@ -94,29 +94,6 @@
     </section>
   </main>
 
-  <!--
-    El navegador no entiende TypeScript, así que src/app.ts se compila en el
-    momento al abrir la página. El proyecto NO contiene archivos .js.
-    Requiere: servidor local (npx serve .) + internet para el compilador.
-  -->
-  <script src="https://cdn.jsdelivr.net/npm/typescript@5/lib/typescript.js"></script>
-  <script>
-    fetch("src/app.ts")
-      .then((r) => (r.ok ? r.text() : Promise.reject(r.status)))
-      .then((codigo) => {
-        const salida = ts.transpileModule(codigo, {
-          compilerOptions: { target: ts.ScriptTarget.ES2020, module: ts.ModuleKind.None },
-        });
-        (0, eval)(salida.outputText);
-      })
-      .catch(() =>
-        alert(
-          "No se pudo cargar src/app.ts.\n\n" +
-            "Abre la página con un servidor local:\n" +
-            "    npx serve .\n\n" +
-            "También necesitas conexión a internet para bajar el compilador de TypeScript."
-        )
-      );
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

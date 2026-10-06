@@ -13,21 +13,24 @@ Calculadora web para estudiantes de la Escuela Politécnica Nacional: ingresa do
 | 18 – 27.99      | Supletorio   |
 | 0 – 17.99       | Reprueba     |
 
-Si quedas en supletorio, la página muestra la nota mínima del examen (sobre 40) que necesitas para llegar a 24.
+Si quedas en supletorio, debes obtener **al menos 24/40** en el examen y sumar **48 puntos o más** entre tus dos notas y el examen. La página muestra la nota mínima necesaria, calculada como el mayor valor entre **24** y **48 menos la suma de tus notas**. Si obtienes menos de 24 en el examen, repruebas el supletorio.
 
 ## Estructura
 
 ```
 CalculadoraWeb-EPN/
-├── index.html      # Interfaz + mini cargador que compila src/app.ts
+├── index.html      # Interfaz y carga de app.js
+├── app.js          # JavaScript generado para el navegador
 ├── css/styles.css  # Estilos y colores por estado
 └── src/app.ts      # Toda la lógica (validación y cálculo)
 ```
 
 ## Cómo ejecutar
 
-El navegador bloquea la lectura de archivos locales, así que se necesita un servidor:
+Instala las dependencias una vez con `npm install`. Luego inicia la aplicación:
 
 ```bash
-npx serve .        # o: npm start
+npm start
 ```
+
+El comando compila `src/app.ts` a `app.js` y levanta un servidor local. La página ya no necesita descargar TypeScript desde internet ni leer archivos `.ts` desde el navegador.

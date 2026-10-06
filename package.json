@@ -4,7 +4,8 @@
   "description": "Calculadora de promedios y supletorios para estudiantes de la Escuela Politécnica Nacional",
   "private": true,
   "scripts": {
-    "start": "npx serve .",
+    "start": "npm run build && npx serve .",
+    "build": "tsc -p tsconfig.build.json",
     "check": "tsc"
   },
   "devDependencies": {

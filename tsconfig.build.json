@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "module": "none",
+    "noEmit": false,
+    "outFile": "./app.js"
+  }
+}
