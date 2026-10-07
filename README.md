@@ -15,28 +15,20 @@ Calculadora web para estudiantes de la Escuela Politécnica Nacional: ingresa do
 
 Si quedas en supletorio, debes obtener **al menos 24/40** en el examen y sumar **48 puntos o más** entre tus dos notas y el examen. La página muestra la nota mínima necesaria, calculada como el mayor valor entre **24** y **48 menos la suma de tus notas**. Si obtienes menos de 24 en el examen, repruebas el supletorio.
 
+## Capturas
+
+### Aprueba
+<img width="456" height="590" alt="Pantalla de aprobado" src="https://github.com/user-attachments/assets/bade510f-5d63-4a7e-8338-ba6e03ccde98" />
+
+### Supletorio
+<img width="420" height="657" alt="Pantalla de supletorio" src="https://github.com/user-attachments/assets/ed553f2e-ca5e-405f-aee6-37f50d4ce839" />
+
+### Reprueba
+<img width="426" height="587" alt="Pantalla de reprobado" src="https://github.com/user-attachments/assets/9b67c472-4f46-44c1-8ac5-0e5dce7bc026" />
+
 ## Instalación y ejecución
 
 Instala las dependencias una vez:
 
 ```bash
 npm install
-```
-
-Luego inicia la aplicación:
-
-```bash
-npm start
-```
-
-El comando compila `src/app.ts` a `app.js` y levanta un servidor local (`npx serve .`); la primera ejecución lo descarga, así que necesita red. Abre la URL que imprime en la consola.
-
-Si editas `src/app.ts`, vuelve a compilar con `npm run build` para que el navegador ejecute la lógica nueva.
-
-## Capturas
-<img width="456" height="590" alt="image" src="https://github.com/user-attachments/assets/bade510f-5d63-4a7e-8338-ba6e03ccde98" />
-
-<img width="420" height="657" alt="image" src="https://github.com/user-attachments/assets/ed553f2e-ca5e-405f-aee6-37f50d4ce839" />
-
-<img width="426" height="587" alt="image" src="https://github.com/user-attachments/assets/9b67c472-4f46-44c1-8ac5-0e5dce7bc026" />
-
