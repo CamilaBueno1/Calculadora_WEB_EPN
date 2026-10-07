@@ -31,4 +31,9 @@ Si quedas en supletorio, debes obtener **al menos 24/40** en el examen y sumar *
 Instala las dependencias una vez:
 
 ```bash
-npm install
+npm install ```
+
+Ejecución:
+
+```bash
+npm start ```
