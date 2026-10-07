@@ -14,7 +14,14 @@ Calculadora web para estudiantes de la Escuela Politécnica Nacional: ingresa do
 | 0 – 17.99       | Reprueba     |
 
 Si quedas en supletorio, debes obtener **al menos 24/40** en el examen y sumar **48 puntos o más** entre tus dos notas y el examen. La página muestra la nota mínima necesaria, calculada como el mayor valor entre **24** y **48 menos la suma de tus notas**. Si obtienes menos de 24 en el examen, repruebas el supletorio.
-
+## Instalación
+```bash
+npm install
+```
+## Ejecución
+```bash
+npm start 
+```
 ## Capturas
 
 ### Aprueba
@@ -26,14 +33,6 @@ Si quedas en supletorio, debes obtener **al menos 24/40** en el examen y sumar *
 ### Reprueba
 <img width="426" height="587" alt="Pantalla de reprobado" src="https://github.com/user-attachments/assets/9b67c472-4f46-44c1-8ac5-0e5dce7bc026" />
 
-## Instalación y ejecución
 
-Instala las dependencias una vez:
 
-```bash
-npm install ```
 
-Ejecución:
-
-```bash
-npm start ```
