@@ -34,20 +34,9 @@ El comando compila `src/app.ts` a `app.js` y levanta un servidor local (`npx ser
 Si editas `src/app.ts`, vuelve a compilar con `npm run build` para que el navegador ejecute la lógica nueva.
 
 ## Capturas
+<img width="456" height="590" alt="image" src="https://github.com/user-attachments/assets/bade510f-5d63-4a7e-8338-ba6e03ccde98" />
 
-<p align="center">
-  <img src="docs/img/calculadora-aprueba.png" width="440" alt="Calculadora EPN mostrando un resultado de 34 sobre 40: aprueba" />
-</p>
+<img width="420" height="657" alt="image" src="https://github.com/user-attachments/assets/ed553f2e-ca5e-405f-aee6-37f50d4ce839" />
 
-| | |
-|:--:|:--:|
-| <img src="docs/img/calculadora-inicio.png" width="380" alt="Vista inicial con las reglas de aprobación y el formulario vacío" /><br><sub>Vista inicial</sub> | <img src="docs/img/calculadora-validacion.png" width="380" alt="Validación de una nota mayor a 20 con mensaje de error en español" /><br><sub>Nota fuera de rango (0 – 20)</sub> |
-| <img src="docs/img/calculadora-supletorio.png" width="380" alt="Resultado supletorio con la nota mínima del examen: 29 sobre 40" /><br><sub>Supletorio (10 + 9 = 19 → pide 29/40)</sub> | <img src="docs/img/calculadora-reprueba.png" width="380" alt="Resultado de 14 sobre 40: reprueba" /><br><sub>Reprueba (8 + 6 = 14)</sub> |
+<img width="426" height="587" alt="image" src="https://github.com/user-attachments/assets/9b67c472-4f46-44c1-8ac5-0e5dce7bc026" />
 
-### Diseño responsive
-
-En pantallas menores a 460 px las reglas se apilan en una sola columna y la tarjeta ocupa todo el ancho disponible.
-
-<p align="center">
-  <img src="docs/img/calculadora-movil.png" width="240" alt="Calculadora EPN en un teléfono, con las reglas apiladas verticalmente" />
-</p>
